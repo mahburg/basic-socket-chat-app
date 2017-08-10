@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.login-container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.login{
+    border: 1px solid black;
+    padding: 20px;
+}
+.chat-room{
+    display: flex;
+    justify-content: space-around
+}
+
+.users-area{
+    background-color: #CCC;
+    border: 1px solid black;
+    width: 23%;
+    min-height: 100px;
+    padding: 15px;
+}
+
+.message-area{
+    border: 1px solid black;
+    width: 63%;
+    min-height: 100px;
+    padding: 15px;
+}
+
+.message-list{
+    display: flex;
+    flex-direction: column-reverse;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #EEE; 
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    max-height: 80vh;   
+}
+.message span{
+    font-weight: bold;
+}
+
+.input-area{
+    padding: 15px;
+    border: 1px solid grey;
+}
+.input-area input{
+    width: calc(100% - 50px);
+}

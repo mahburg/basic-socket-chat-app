@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='app'>
+    <head>
+        <title>Sockets Test</title>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='main.css' rel='stylesheet'>
+    </head>
+    <body ng-controller="mainCtrl">
+        {{test}}
+        <div class="page-container">
+            <div class="login-container">
+                <form class="login" ng-submit="login()" ng-show="showLogin">
+                    <h3>Login</h3>
+                    <input type="text" placeholder="Chat Name" ng-model="nameIn">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="chat-room" ng-hide="showLogin">
+                <div class="users-area">
+                    <h3>Users Online</h3>
+                    <ul class="users-list">
+                        <li ng-repeat="user in users track by $index">{{user.name}}</li>
+                    </ul>
+                </div>
+                <div class="message-area">
+                    <div>
+                        <div class="message-list">
+                            <p class="message" title={{message.timestamp}} ng-repeat="message in messages track by $index"><span>{{message.user}}:</span> {{message.msg}}</p>
+                        </div>
+                    </div>
+                    <form class="input-area" ng-submit="sendMessage()">
+                        <input ng-model="messageIn" type="text"/><button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+        <script src="./libs/angular-socket-io/socket.js"></script>
+        
+        <script src="./app.js"></script>
+
+    </body>
+</html>
